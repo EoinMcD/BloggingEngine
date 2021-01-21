@@ -1,6 +1,6 @@
 class Hello()
-    def initialize(attribute)
-      @attribute = attribute
+    def initialize(name)
+      @name = name
     end
 
 end
