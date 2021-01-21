@@ -6,6 +6,9 @@ class Hello()
     def findName()
         return @name
     end
+    def pullRequestMethod()
+
+    end
     
 
 end
