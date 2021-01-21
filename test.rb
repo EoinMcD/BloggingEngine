@@ -9,6 +9,9 @@ class Hello()
     def pullRequestMethod()
 
     end
+    def newMethod()
+
+    end
     
 
 end
