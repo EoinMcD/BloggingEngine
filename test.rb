@@ -1,17 +1,17 @@
-class Hello()
+class Hello
     @name
     def initialize(name)
       @name = name
+      
     end
     def findName()
         return @name
     end
-    def pullRequestMethod()
-
-    end
-    def newMethod()
-
-    end
+    
     
 
 end
+
+puts 'Test'
+Eoin = Hello.new('Eoin')
+puts Eoin.findName()
