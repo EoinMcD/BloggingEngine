@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Hello
     @name
     def initialize(name)
