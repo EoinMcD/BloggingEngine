@@ -15,6 +15,15 @@ Old blog posts will be automatically archived after a certain period of time.
 
 Made with ruby on rails and react.
 
+## How to run
+Run "rails s" and visit localhost:3000 for main page
+localhost:3000/user for the "Create User" page 
+
+The controller test at test/controllers/user_controller_test.rb tests for the page being present, and that text is rendered.
+
+
+
+## Versions
 
 * Ruby version
     ruby 2.7.2p137
