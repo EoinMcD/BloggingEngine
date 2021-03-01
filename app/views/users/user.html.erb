@@ -32,5 +32,6 @@
     <%= form.submit "Create my account", class: "btn btn-primary" %>
 <%end%>
 
- <%= javascript_pack_tag 'signup_form' %>
+ <%= react_component("signup_form",
+     props: {path: 'users_path'}) %>
  
