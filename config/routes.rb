@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
   get '/index', to:'home#index'
   get '/signup', to:'users#user'
-  post '/signup', to:
+  post'/create', to:'users#create'
+  
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
