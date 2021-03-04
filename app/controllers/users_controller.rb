@@ -19,7 +19,8 @@ class UsersController < ApplicationController
 
       redirect_to "/index"
     else
-      render 'user'
+     render json: { status: 500, errors: @user.errors.full_messages }
+     
       
 
     end
