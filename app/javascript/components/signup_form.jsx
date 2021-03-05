@@ -10,7 +10,8 @@ function SignupForm(){
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
     const [confirmpassword, setConfirm] = React.useState("");
-    const [errorsList, setErrors] = React.useState("");
+    const [errorsList, setErrors] = React.useState([]);
+    
 
     const SendForm = (e) => {
         e.preventDefault();
@@ -26,48 +27,52 @@ function SignupForm(){
 
             success: function (result){
                 setErrors(result.errors)
+                console.log(errorsList)
+                
             },
             error: function (result) {                        
             }
         })
     }
-        return(
-            <div>
-            <form onSubmit={SendForm}>
-                {errorsList ? <div>{errorsList}</div> : null}
-                    <div style ={{width:50,height:50}}>
-                        <fieldset>
-                            <label>
-                            First Name:
-                        <input className="form-control" name="name" onChange={(e) => setName(e.target.value)} />
-                    </label>
-                    <label>
-                        Second Name:
-                        <input className="form-control" name="sname" onChange={(e) => setSname(e.target.value)}/>
-                    </label>
-                    <label>
-                        Email:
-                        <input className="form-control" name="email" onChange={(e) => setEmail(e.target.value)} />
-                    </label>
-                    <label>
-                        Password:
-                        <input className="form-control" type="password" name="password" onChange={(e) => setPassword(e.target.value)} />
-                    </label>
-                    <label>
-                        Confirm Password: 
-                        <input className="form-control" type="password" name="confirmpassword" onChange={(e) => setConfirm(e.target.value)} />
-                    </label>
-                    <button type='submit'>Submit</button>
-                </fieldset>
-                </div>
-                
-            </form>
-            </div>
-             
-            
-        )
-    }
+    const listErrors =
+        errorsList.map((errorsList) =>
+                <li>{errorsList}</li>
+            ) ; 
 
+        
+    return(
+        <div>
+            <form onSubmit={SendForm}>
+                {errorsList ? <ul>{listErrors}</ul> : null}   
+                <div style ={{width:50,height:50}}>
+                    <fieldset> 
+                        <label>
+                           First Name:
+                           <input className="form-control" name="name" onChange={(e) => setName(e.target.value)} />
+                        </label>
+                        <label>
+                            Second Name:
+                            <input className="form-control" name="sname" onChange={(e) => setSname(e.target.value)}/>
+                        </label>
+                        <label>
+                               Email:
+                            <input className="form-control" name="email" onChange={(e) => setEmail(e.target.value)} />
+                        </label>
+                        <label>
+                            Password:
+                            <input className="form-control" type="password" name="password" onChange={(e) => setPassword(e.target.value)} />
+                        </label>
+                        <label>
+                            Confirm Password: 
+                           <input className="form-control" type="password" name="confirmpassword" onChange={(e) => setConfirm(e.target.value)} />
+                        </label>
+                        <button type='submit'>Submit</button>
+                    </fieldset>
+                </div>          
+            </form>
+        </div> 
+    )
+}
 
 function RenderErrors(props) {
     return <h1>{props.error}</h1>
