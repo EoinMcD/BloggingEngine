@@ -1,49 +1,49 @@
-import React from 'react'
-import ReactDOM, { render } from 'react-dom'
-import $ from 'jquery' 
+// eslint-disable-next-line no-use-before-define
+import React from "react";
+import $ from "jquery";
 
+function SignupForm () {
+  const [name, setName] = React.useState("");
+  const [sname, setSname] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [confirmpassword, setConfirm] = React.useState("");
+  const [errorsList, setErrors] = React.useState([]);
 
-function SignupForm(){
+  const SendForm = (e) => {
+    e.preventDefault();
+    $.ajax({
+      async: false,
+      type: "POST",
+      url: "/create",
+      data: {
+        first_name: name,
+        second_name: sname,
+        email: email,
+        password: password,
+        password_confirmation: confirmpassword
+      },
 
-    const [name, setName] = React.useState("");
-    const [sname, setSname] = React.useState("");
-    const [email, setEmail] = React.useState("");
-    const [password, setPassword] = React.useState("");
-    const [confirmpassword, setConfirm] = React.useState("");
-    const [errorsList, setErrors] = React.useState([]);
-    
+      success: function (result) {
+        setErrors(result.errors);
+      },
+      error: function (result) {
 
-    const SendForm = (e) => {
-        e.preventDefault();
-          $.ajax({
-            async: false,
-            type: 'POST',
-            url: '/create',
-            data: { first_name: name,
-                second_name: sname, 
-                email: email,
-                password: password, 
-                password_confirmation: confirmpassword },
-
-            success: function (result){
-                setErrors(result.errors)
-                
-            },
-            error: function (result) {                        
-            }
-        })
-    }
-    const listErrors =
+      }
+    });
+  };
+  const listErrors =
         errorsList.map((errorsList) =>
+                // eslint-disable-next-line react/jsx-key
                 <li>{errorsList}</li>
-            ); 
+        );
 
-    return(
+  return (
         <div>
             <form onSubmit={SendForm}>
-                {errorsList ? <ul>{listErrors}</ul> : null}   
-                <div style ={{width:50,height:50}}>
-                    <fieldset> 
+                {errorsList ? <ul>{listErrors}</ul> : null}
+                <div style ={{ width: 50, height: 50 }}>
+                    <fieldset>
                         <label>
                            First Name:
                            <input className="form-control" name="name" onChange={(e) => setName(e.target.value)} />
@@ -61,19 +61,15 @@ function SignupForm(){
                             <input className="form-control" type="password" name="password" onChange={(e) => setPassword(e.target.value)} />
                         </label>
                         <label>
-                            Confirm Password: 
+                            Confirm Password:
                            <input className="form-control" type="password" name="confirmpassword" onChange={(e) => setConfirm(e.target.value)} />
                         </label>
                         <button type='submit'>Submit</button>
                     </fieldset>
-                </div>          
+                </div>
             </form>
-        </div> 
-    )
+        </div>
+  );
 }
 
-function RenderErrors(props) {
-    return <h1>{props.error}</h1>
-}
-
-export default SignupForm
+export default SignupForm;
