@@ -27,7 +27,6 @@ function SignupForm(){
 
             success: function (result){
                 setErrors(result.errors)
-                console.log(errorsList)
                 
             },
             error: function (result) {                        
@@ -37,9 +36,8 @@ function SignupForm(){
     const listErrors =
         errorsList.map((errorsList) =>
                 <li>{errorsList}</li>
-            ) ; 
+            ); 
 
-        
     return(
         <div>
             <form onSubmit={SendForm}>
@@ -77,9 +75,5 @@ function SignupForm(){
 function RenderErrors(props) {
     return <h1>{props.error}</h1>
 }
-
-
-
-
 
 export default SignupForm
