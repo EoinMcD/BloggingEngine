@@ -28,14 +28,13 @@ function SignupForm () {
         setErrors(result.errors);
       },
       error: function (result) {
-
+        alert("Please try again");
       }
     });
   };
   const listErrors =
-        errorsList.map((errorsList) =>
-                // eslint-disable-next-line react/jsx-key
-                <li>{errorsList}</li>
+        errorsList.map((i, errorsList) =>
+                <li key = {errorsList}>{i}</li>
         );
 
   return (

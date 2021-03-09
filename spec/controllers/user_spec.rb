@@ -25,5 +25,13 @@ RSpec.describe UsersController, type: :controller do
         expect(response.status).to eq(302)
       end
     end
+    context 'When user submits incorrect params' do
+      let(:user) { { first_name: '', second_name: 'User', email: 'test@user.com', password: '12345', password_confirmation: '12345' } }
+      it 'Doesnt add a user' do
+        count = User.count
+        post :create, params: user
+        expect(User.count).to eq(count)
+      end
+    end
   end
 end
