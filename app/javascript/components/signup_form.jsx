@@ -33,8 +33,8 @@ function SignupForm () {
     });
   };
   const listErrors =
-        errorsList.map((i, errorsList) =>
-                <li key = {errorsList}>{i}</li>
+        errorsList.map((error, errorsList) =>
+                <li key = {errorsList}>{error}</li>
         );
 
   return (
