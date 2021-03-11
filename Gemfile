@@ -7,7 +7,9 @@ ruby '2.7.2'
 
 source 'https://rubygems.org'
 gem 'rspec', '~> 3.0'
-
+# Bcypt for password hashing
+gem 'bcrypt', '3.1.11'
+gem 'react-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'
 # Use sqlite3 as the database for Active Record
