@@ -9,7 +9,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to '/index'
+      redirect_to '/articles'
+      login!
     else
       render json: { status: 500, errors: @user.errors.full_messages }
 
