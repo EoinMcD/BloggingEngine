@@ -24,6 +24,10 @@ RSpec.describe UsersController, type: :controller do
 
         expect(response.status).to eq(302)
       end
+      it 'Logs the user in after sign up' do
+        post :create, params: user
+        expect(controller.logged_in?).to eq(true)
+      end
     end
     context 'When user submits incorrect params' do
       let(:user) { { first_name: '', second_name: 'User', email: 'test@user.com', password: '12345', password_confirmation: '12345' } }
