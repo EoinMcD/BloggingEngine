@@ -36,6 +36,10 @@ RSpec.describe UsersController, type: :controller do
         post :create, params: user
         expect(User.count).to eq(count)
       end
+      it 'Doesnt log the user in' do
+        post :create, params: user
+        expect(controller.logged_in?).to eq(false)
+      end
     end
   end
 end

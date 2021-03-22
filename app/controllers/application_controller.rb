@@ -2,7 +2,7 @@
 
 class ApplicationController < ActionController::Base
   #skip_before_action :verify_authenticity_token
-  helper_method :login!, :logged_in?, :current_user, :authorized_user?, :logout!, :set_user
+  helper_method :login!, :logged_in?, :current_user, :authorized_user?, :user_name?, :logout!, :set_user
 
   def login!
     session[:user_id] = @user.id
@@ -18,6 +18,11 @@ class ApplicationController < ActionController::Base
 
   def authorized_user?
     @user == current_user
+  end
+
+  def user_name?
+    @user = current_user
+    @user.first_name ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   def logout!
