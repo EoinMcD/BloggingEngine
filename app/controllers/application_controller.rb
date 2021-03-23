@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  # skip_before_action :verify_authenticity_token
-  helper_method :login!, :logged_in?, :current_user, :authorized_user?, :user_name?, :logout!, :set_user
-
   def login!
     session[:user_id] = @user.id
   end
@@ -23,10 +20,6 @@ class ApplicationController < ActionController::Base
   def user_name?
     @user = current_user
     @user.first_name ||= User.find(session[:user_id]) if session[:user_id]
-  end
-
-  def logout!
-    session.clear
   end
 
   def set_user

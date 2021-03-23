@@ -28,6 +28,9 @@ Layout/EmptyLineAfterGuardClause:
   Exclude:
     - 'bin/bundle'
 
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
 # Offense count: 4
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, IndentationWidth.

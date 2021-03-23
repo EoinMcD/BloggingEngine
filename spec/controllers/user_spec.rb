@@ -19,9 +19,8 @@ RSpec.describe UsersController, type: :controller do
         post :create, params: user
         expect(User.count).to eq(count + 1)
       end
-      it 'Redirects to home page' do
+      it 'Redirects to new page' do
         post :create, params: user
-
         expect(response.status).to eq(302)
       end
       it 'Logs the user in after sign up' do
