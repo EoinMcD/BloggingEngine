@@ -13,10 +13,6 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  def authorized_user?
-    @user == current_user
-  end
-
   def user_name?
     @user = current_user
     @user.first_name ||= User.find(session[:user_id]) if session[:user_id]
