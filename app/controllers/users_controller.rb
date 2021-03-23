@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class UsersController < ApplicationController
   def user
     @user = User.new
@@ -9,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      login!
+      login
       redirect_to '/articles'
     else
       render json: { status: 500, errors: @user.errors.full_messages }

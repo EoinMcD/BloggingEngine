@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: session_params[:email])
 
     if @user&.authenticate(session_params[:password])
-      login!
+      login
       redirect_to '/articles'
       render json: {
         logged_in?: true,
