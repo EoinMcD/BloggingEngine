@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function HelloName (props) {
   const name = props.name;
@@ -8,5 +9,9 @@ function HelloName (props) {
     </div>
   );
 }
+
+HelloName.propTypes = {
+  name: PropTypes.string.isRequired
+};
 
 export default HelloName;
