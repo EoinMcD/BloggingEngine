@@ -23,7 +23,7 @@ RSpec.describe UsersController, type: :controller do
       end
       it 'Logs the user in after sign up' do
         post :create, params: user
-        expect(controller.logged_in?).to eq(true)
+        expect(!!controller.current_user).to eq(true)
       end
     end
     context 'When user submits incorrect params' do
@@ -35,7 +35,7 @@ RSpec.describe UsersController, type: :controller do
       end
       it 'Doesnt log the user in' do
         post :create, params: user
-        expect(controller.logged_in?).to eq(false)
+        expect(controller.current_user).to eq(nil)
       end
       it 'Doesnt redirect to new page' do
         post :create, params: user

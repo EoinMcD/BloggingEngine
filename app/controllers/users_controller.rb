@@ -1,6 +1,4 @@
-require 'logging_module'
 class UsersController < ApplicationController
-  include LoggingModule
   def user
     @user = User.new
   end
