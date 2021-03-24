@@ -6,6 +6,4 @@ Rails.application.routes.draw do
   post '/create', to:'users#create'
   get '/articles', to:'main#index'
   post '/login', to:'sessions#create'
-  post '/logout', to:'sessions#destroy'
-  get '/logged_in', to:'sessions#is_logged_in?'
 end

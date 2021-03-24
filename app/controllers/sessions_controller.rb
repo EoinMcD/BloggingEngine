@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  include LoggingModule
   def create
     @user = User.find_by(email: session_params[:email])
 
@@ -15,10 +16,6 @@ class SessionsController < ApplicationController
         errors: ['No user found']
       }
     end
-  end
-
-  def logout
-    session.clear
   end
 
   private

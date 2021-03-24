@@ -19,7 +19,7 @@ RSpec.describe UsersController, type: :controller do
       end
       it 'Redirects to new page' do
         post :create, params: user
-        expect(response.status).to eq(302)
+        expect(response).to redirect_to('/articles')
       end
       it 'Logs the user in after sign up' do
         post :create, params: user
@@ -36,6 +36,10 @@ RSpec.describe UsersController, type: :controller do
       it 'Doesnt log the user in' do
         post :create, params: user
         expect(controller.logged_in?).to eq(false)
+      end
+      it 'Doesnt redirect to new page' do
+        post :create, params: user
+        expect(response.status).not_to eq(302)
       end
     end
   end
