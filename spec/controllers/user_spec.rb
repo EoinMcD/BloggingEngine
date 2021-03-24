@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
@@ -19,10 +17,13 @@ RSpec.describe UsersController, type: :controller do
         post :create, params: user
         expect(User.count).to eq(count + 1)
       end
-      it 'Redirects to home page' do
+      it 'Redirects to new page' do
         post :create, params: user
-
-        expect(response.status).to eq(302)
+        expect(response).to redirect_to('/articles')
+      end
+      it 'Logs the user in after sign up' do
+        post :create, params: user
+        expect(!!controller.current_user).to eq(true)
       end
     end
     context 'When user submits incorrect params' do
@@ -31,6 +32,14 @@ RSpec.describe UsersController, type: :controller do
         count = User.count
         post :create, params: user
         expect(User.count).to eq(count)
+      end
+      it 'Doesnt log the user in' do
+        post :create, params: user
+        expect(controller.current_user).to eq(nil)
+      end
+      it 'Doesnt redirect to new page' do
+        post :create, params: user
+        expect(response.status).not_to eq(302)
       end
     end
   end
