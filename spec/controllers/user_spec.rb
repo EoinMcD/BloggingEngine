@@ -23,7 +23,7 @@ RSpec.describe UsersController, type: :controller do
       end
       it 'Logs the user in after sign up' do
         post :create, params: user
-        expect(!!controller.current_user).to eq(true)
+        expect(!controller.current_user.nil?).to eq(true)
       end
     end
     context 'When user submits incorrect params' do
