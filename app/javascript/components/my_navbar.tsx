@@ -24,24 +24,16 @@ function MyNavbar (props) {
   const logged = props.logged_in;
   const regPath = props.regPath;
   const homePath = props.homePath;
-  function logger () {
-  }
-  function reg () {
-    window.location.href = regPath;
-  }
-  function home () {
-    window.location.href = homePath;
-  }
   return (
     <AppBar position="static" >
   <Toolbar>
     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
     </IconButton>
     <Typography variant="h1" className={classes.title}>
-      <Button onClick = {home} color="inherit">BlogEngine</Button>
+      <Button data-testid="HomeButton" href={homePath} color="inherit">BlogEngine</Button>
     </Typography>
-     {logged ? null : <Button onClick = {reg} color="inherit">Register</Button>}
-     {logged ? <Button onClick = {logger} color="inherit">Logout</Button> : <Button color="inherit">Login</Button>}
+     {logged ? null : <Button data-testid="RegButton" href={regPath} color="inherit">Register</Button>}
+     {logged ? <Button data-testid="OutButton" color="inherit">Logout</Button> : <Button data-testid="InButton"color="inherit">Login</Button>}
   </Toolbar>
 </AppBar>
   );

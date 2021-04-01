@@ -1,86 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Component renders as expected 1`] = `
-<header
-  className="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
->
-  <div
-    className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+<div>
+  <header
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary MuiPaper-elevation4"
   >
-    <button
-      aria-label="menu"
-      className="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-2 MuiIconButton-colorInherit MuiIconButton-edgeStart"
-      disabled={false}
-      onBlur={[Function]}
-      onDragLeave={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchMove={[Function]}
-      onTouchStart={[Function]}
-      tabIndex={0}
-      type="button"
-    >
-      <span
-        className="MuiIconButton-label"
-      />
-    </button>
-    <h3
-      className="MuiTypography-root makeStyles-title-3 MuiTypography-h3"
+    <div
+      class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <button
-        className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onDragLeave={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex={0}
+        aria-label="menu"
+        class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-2 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+        tabindex="0"
         type="button"
       >
         <span
-          className="MuiButton-label"
-        >
-          BlogEngine
-        </span>
+          class="MuiIconButton-label"
+        />
+        <span
+          class="MuiTouchRipple-root"
+        />
       </button>
-    </h3>
-    <button
-      className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
-      disabled={false}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onDragLeave={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchMove={[Function]}
-      onTouchStart={[Function]}
-      tabIndex={0}
-      type="button"
-    >
-      <span
-        className="MuiButton-label"
+      <h1
+        class="MuiTypography-root makeStyles-title-3 MuiTypography-h1"
       >
-        Logout
-      </span>
-    </button>
-  </div>
-</header>
+        <a
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
+          data-testid="HomeButton"
+          href="/"
+          tabindex="0"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            BlogEngine
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </a>
+      </h1>
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
+        data-testid="OutButton"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Logout
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </header>
+</div>
 `;
