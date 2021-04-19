@@ -1,0 +1,116 @@
+// Place all the styles related to the aboutme controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.name 
+h1 {
+    font-size: 150px ;
+    text-align:center;
+    font-family:fantasy;
+    padding-top:50px;
+    position: relative;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 150px 0px 150px;
+}
+
+.name {
+    display:inline-flex;
+    justify-content: center;
+    background-color:#55a8c9; 
+    flex-wrap:nowrap; 
+    width:100%
+    
+}
+
+.name img{
+    padding-right:0px;
+    margin-right:0px;
+    padding-top:75px;  
+}
+
+.divider
+p {
+    font-size: 50px;
+    text-align:center;
+    padding-top:0px;
+    background-color:#3AAFA9;
+    color:white;
+    margin: 0;
+    padding: 0;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.media {
+    display: inline-flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width:100%;
+    background-color:bisque;
+    margin: 0;
+    padding: 0;
+}
+
+
+.footer {
+    display: inline-flex;
+    font-size:20px;
+    justify-content:space-around;
+    width:100%;
+    background-color: grey;
+}
+
+.signup {
+    display:flex;
+    justify-content: center;
+    background-color:bisque;
+}
+
+.signup p{
+    font-size: 30px;
+}
+
+.footer a{
+    color:yellow;
+}
+
+.form {
+    display: inline-flex;
+    background-color: bisque;
+    justify-content: center;
+    width:100%;
+    padding-bottom: 30px; 
+}
+
+#skip {
+    background-color:bisque;
+}
+
+.main ul{
+    padding-bottom:50px
+}
+
+.table {
+    height:40%;
+    left:10%;
+    margin: 20px auto;
+    overflow-y:scroll;
+    position:static;
+    text-align:center;
+}
+
+.head tr {
+    background: #88CCF1;
+    color: #FFF;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+     font-weight: 100;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.body tr{
+    background: #f4f7f8;
+    border-bottom: 1px solid #FFF;
+    margin-bottom: px;
+}
+
