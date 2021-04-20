@@ -3,114 +3,114 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .name {
-    display:inline-flex;
-    justify-content: center;
-    background-color:#55a8c9; 
-    flex-wrap:nowrap; 
-    width:100%;
-    h1 {
-        font-size: 150px ;
-        text-align:center;
-        font-family:fantasy;
-        padding-top:50px;
-        position: relative;
-        padding: 0px 150px;
-    }
-    img{
-        padding-right:0;
-        margin-right:0;
-        padding-top:75px; 
-        width:300px;
-        height:300px; 
-    } 
+  display: inline-flex;
+  justify-content: center;
+  background-color: #55a8c9;
+  flex-wrap: nowrap;
+  width: 100%;
+  h1 {
+    font-size: 150px;
+    text-align: center;
+    font-family: fantasy;
+    padding-top: 50px;
+    position: relative;
+    padding: 0px 150px;
+  }
+  img {
+    padding-right: 0;
+    margin-right: 0;
+    padding-top: 75px;
+    width: 300px;
+    height: 300px;
+  }
 }
 
 .padding {
-    margin:0;
-    padding:0;
-    p{
-        margin:0;
-        padding:0;
-    }
-    
+  margin: 0;
+  padding: 0;
+  p {
+    margin: 0;
+    padding: 0;
+  }
 }
 
-.divider
-p {
-    font-size: 50px;
-    text-align:center;
-    background-color:#3AAFA9;
-    color:white;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    
+.video iframe {
+  width: 400px;
+  height: 400px;
+}
+
+.divider p {
+  font-size: 50px;
+  text-align: center;
+  background-color: #3aafa9;
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .media {
-    display: inline-flex;
-    justify-content: space-around;
-    flex-direction: row;
-    width:100%;
-    background-color:bisque;
+  display: inline-flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+  background-color: bisque;
 }
 
-
 .footer {
-    display: inline-flex;
-    font-size:20px;
-    justify-content:space-around;
-    width:100%;
-    background-color: grey;
-    a{
-        color:yellow;
-    }
+  display: inline-flex;
+  font-size: 20px;
+  justify-content: space-around;
+  width: 100%;
+  background-color: grey;
+  a {
+    color: yellow;
+  }
 }
 
 .signup {
-    display:flex;
-    justify-content: center;
-    background-color:bisque;
-    p{
-        font-size: 30px;
-    }
+  display: flex;
+  justify-content: center;
+  background-color: bisque;
+  p {
+    font-size: 30px;
+  }
 }
 
 .form {
-    display: inline-flex;
-    background-color: bisque;
-    justify-content: center;
-    width:100%;
-    padding-bottom: 30px; 
+  display: inline-flex;
+  background-color: bisque;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 30px;
 }
 
 #skip {
-    background-color:bisque;
+  background-color: bisque;
 }
 
-.main ul{
-    padding-bottom:50px
+.main ul {
+  padding-bottom: 50px;
 }
 
 .table {
-    height:40%;
-    left:10%;
-    margin: 20px auto;
-    overflow-y:scroll;
-    position:static;
-    text-align:center;
+  height: 40%;
+  left: 10%;
+  margin: 20px auto;
+  overflow-y: scroll;
+  position: static;
+  text-align: center;
 }
 
 .head tr {
-    background: #88CCF1;
-    color: #FFF;
-    font-family: 'Lato', sans-serif;
-    font-size: 16px;
-     font-weight: 100;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+  background: #88ccf1;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-.body tr{
-    background: #f4f7f8;
-    border-bottom: 1px solid #FFF;
+.body tr {
+  background: #f4f7f8;
+  border-bottom: 1px solid #fff;
 }
-
