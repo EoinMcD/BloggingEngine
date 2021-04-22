@@ -15,7 +15,14 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2)
   },
   title: {
-    flexGrow: 2
+    flexGrow: 2,
+    fontSize: "3rem"
+  },
+  toolbar: {
+    backgroundColor: "SandyBrown",
+    borderRadius: "15px",
+    padding: "0",
+    height: "70px"
   }
 }));
 
@@ -25,8 +32,8 @@ function MyNavbar (props) {
   const regPath = props.regPath;
   const homePath = props.homePath;
   return (
-    <AppBar position="static" >
-  <Toolbar>
+    <AppBar position="static" className={classes.toolbar}>
+  <Toolbar >
     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
     </IconButton>
     <Typography variant="h1" className={classes.title}>
