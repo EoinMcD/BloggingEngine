@@ -4,7 +4,6 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
 import * as PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
@@ -34,13 +33,11 @@ function MyNavbar (props) {
   return (
     <AppBar position="static" className={classes.toolbar}>
   <Toolbar >
-    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-    </IconButton>
     <Typography variant="h1" className={classes.title}>
       <Button data-testid="HomeButton" href={homePath} color="inherit">BlogEngine</Button>
     </Typography>
      {logged ? null : <Button data-testid="RegButton" href={regPath} color="inherit">Register</Button>}
-     {logged ? <Button data-testid="OutButton" color="inherit">Logout</Button> : <Button data-testid="InButton"color="inherit">Login</Button>}
+     {logged ? <Button color="inherit">Logout</Button> : <Button color="inherit">Login</Button>}
   </Toolbar>
 </AppBar>
   );

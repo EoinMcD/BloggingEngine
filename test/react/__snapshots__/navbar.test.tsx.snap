@@ -8,19 +8,6 @@ exports[`Component renders as expected 1`] = `
     <div
       class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
-      <button
-        aria-label="menu"
-        class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-2 MuiIconButton-colorInherit MuiIconButton-edgeStart"
-        tabindex="0"
-        type="button"
-      >
-        <span
-          class="MuiIconButton-label"
-        />
-        <span
-          class="MuiTouchRipple-root"
-        />
-      </button>
       <h1
         class="MuiTypography-root makeStyles-title-3 MuiTypography-h1"
       >
@@ -43,7 +30,6 @@ exports[`Component renders as expected 1`] = `
       </h1>
       <button
         class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
-        data-testid="OutButton"
         tabindex="0"
         type="button"
       >
