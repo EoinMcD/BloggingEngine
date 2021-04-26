@@ -7,12 +7,12 @@ import "@testing-library/jest-dom";
 import "jest-extended";
 
 const renderNavbar = (
-  loggedin = true,
+  loggedIn = true,
   regPath = "/signup",
   homePath = "/"
 ) : RenderResult => {
   return render(
-    <MyNavbar logged_in= {loggedin} regPath={regPath} homePath={homePath} />
+    <MyNavbar loggedIn= {loggedIn} regPath={regPath} homePath={homePath} />
   );
 };
 
@@ -21,14 +21,14 @@ test("Component renders as expected", () => {
   expect(container).toMatchSnapshot();
 });
 
-test("Title button has been passed the right link", () => {
+test("Title button has the right link", () => {
   const { container } = renderNavbar();
-  expect(getByTestId(container, "HomeButton")).toHaveProperty("href", "http://localhost/");
+  expect(getByTestId(container, "home-button")).toHaveProperty("href", "http://localhost/");
 });
 
-test("Register button has been passed the right link", () => {
+test("Register button has the right link", () => {
   const { container } = renderNavbar(false);
-  expect(getByTestId(container, "RegButton")).toHaveProperty("href", "http://localhost/signup");
+  expect(getByTestId(container, "reg-button")).toHaveProperty("href", "http://localhost/signup");
 });
 
 test("Register button is hidden when user is logged in", () => {

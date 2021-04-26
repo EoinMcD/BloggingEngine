@@ -14,7 +14,7 @@ exports[`Component renders as expected 1`] = `
         <a
           aria-disabled="false"
           class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
-          data-testid="HomeButton"
+          data-testid="home-button"
           href="/"
           tabindex="0"
         >

@@ -4,7 +4,6 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import * as PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,29 +24,36 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function MyNavbar (props) {
+function MyNavbar (props: { loggedIn: boolean; regPath: string; homePath: string; }) {
   const classes = useStyles();
-  const logged = props.logged_in;
+  const loggedIn = props.loggedIn;
   const regPath = props.regPath;
   const homePath = props.homePath;
   return (
     <AppBar position="static" className={classes.toolbar}>
-  <Toolbar >
-    <Typography variant="h1" className={classes.title}>
-      <Button data-testid="HomeButton" href={homePath} color="inherit">BlogEngine</Button>
-    </Typography>
-     {logged ? null : <Button data-testid="RegButton" href={regPath} color="inherit">Register</Button>}
-     {logged ? <Button color="inherit">Logout</Button> : <Button color="inherit">Login</Button>}
-  </Toolbar>
-</AppBar>
+      <Toolbar>
+        <Typography variant="h1" className={classes.title}>
+          <Button data-testid="home-button" href={homePath} color="inherit">
+            BlogEngine
+          </Button>
+        </Typography>
+        {loggedIn
+          ? null
+          : (
+          <Button data-testid="reg-button" href={regPath} color="inherit">
+            Register
+          </Button>
+            )}
+        {loggedIn
+          ? (
+          <Button color="inherit" >Logout</Button>
+            )
+          : (
+          <Button color="inherit">Login</Button>
+            )}
+      </Toolbar>
+    </AppBar>
   );
 }
-
-MyNavbar.propTypes = {
-  logged_in: PropTypes.bool.isRequired,
-  regPath: PropTypes.string.isRequired,
-  homePath: PropTypes.string.isRequired
-
-};
 
 export default MyNavbar;
