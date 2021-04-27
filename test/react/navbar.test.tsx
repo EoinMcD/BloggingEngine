@@ -4,7 +4,6 @@ import { expect, test } from "@jest/globals";
 import { getByTestId, queryByText, getByText, render, RenderResult } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import "@testing-library/jest-dom";
-import "jest-extended";
 
 const renderNavbar = (
   loggedIn = true,
@@ -23,12 +22,12 @@ test("Component renders as expected", () => {
 
 test("Title button has the right link", () => {
   const { container } = renderNavbar();
-  expect(getByTestId(container, "home-button")).toHaveProperty("href", "http://localhost/");
+  expect(getByTestId(container, "home-button")).toHaveProperty("href", window.location.href);
 });
 
 test("Register button has the right link", () => {
   const { container } = renderNavbar(false);
-  expect(getByTestId(container, "reg-button")).toHaveProperty("href", "http://localhost/signup");
+  expect(getByTestId(container, "reg-button")).toHaveProperty("href", window.location.href + "signup");
 });
 
 test("Register button is hidden when user is logged in", () => {
