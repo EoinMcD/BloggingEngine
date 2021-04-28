@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component renders as expected 1`] = `
+<div>
+  <header
+    class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary makeStyles-toolbar-4 MuiPaper-elevation4"
+  >
+    <div
+      class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+    >
+      <h1
+        class="MuiTypography-root makeStyles-title-3 MuiTypography-h1"
+      >
+        <a
+          aria-disabled="false"
+          class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
+          data-testid="home-button"
+          href="/"
+          tabindex="0"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            BlogEngine
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </a>
+      </h1>
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Logout
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </header>
+</div>
+`;
