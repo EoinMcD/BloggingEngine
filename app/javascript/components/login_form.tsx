@@ -1,7 +1,8 @@
-import React from "react";
+import * as React from "react";
 import $ from "jquery";
 
-function LoginForm () {
+function LoginForm (props: {path: String}) {
+  const path = props.path;
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [errorsList, setErrors] = React.useState([]);
@@ -11,7 +12,7 @@ function LoginForm () {
     $.ajax({
       async: false,
       type: "POST",
-      url: "/log",
+      url: path,
       data: {
         email: email,
         password: password
