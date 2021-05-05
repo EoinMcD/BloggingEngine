@@ -1,5 +1,5 @@
 class LoginController < ApplicationController
-  skip_before_action :user_exists
+  #skip_before_action :user_exists
   def index
     
   end

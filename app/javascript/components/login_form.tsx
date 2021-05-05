@@ -9,6 +9,7 @@ function LoginForm (props: {path: String}) {
 
   const SendForm = (e) => {
     e.preventDefault();
+    console.log(path);
     $.ajax({
       async: false,
       type: "POST",
@@ -20,6 +21,7 @@ function LoginForm (props: {path: String}) {
 
       success: function (result) {
         setErrors(result.errors);
+        alert("gOOD JOB!");
       },
       error: function (result) {
         alert("Please try again");

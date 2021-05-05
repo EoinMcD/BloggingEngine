@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :user_exists
+  #before_action :user_exists
   def login
     session[:user_id] = @user.id
   end
