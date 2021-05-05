@@ -3,15 +3,22 @@ class LoginController < ApplicationController
   def index
     
   end
+  skip_before_action :verify_authenticity_token
   def create
-    @user = User.findBy(user_params)
-    if(@user.presence)
-      login
+    @user = User.find_by(email: session_params[:email])
+
+    if @user && @user.authenticate(session_params[:password])
+      login 
+      redirect_to '/articles'
     else
+      render json: {
+        status: 401,
+        errors: 'No user found'
+      }
     end
   end
 
-  def user_params
+  def session_params
     params.permit(:email, :password)
   end
 end
