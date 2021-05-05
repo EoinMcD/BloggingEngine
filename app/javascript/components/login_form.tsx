@@ -36,19 +36,20 @@ function LoginForm (props: {path: String}) {
 
   return (
         <div>
-            <form onSubmit={SendForm}>
+            <form className ='loginform' onSubmit={SendForm}>
+              <h1>LOGIN</h1> <br></br>
             {errorsList ? <ul>{listErrors}</ul> : null}
             <div style ={{ width: 50, height: 50 }}>
                     <fieldset>
                         <label>
-                               Email:
-                            <input className="form-control" name="email" onChange={(e) => setEmail(e.target.value)} />
+                          Email:
                         </label>
+                        <input className="form-control" name="email" onChange={(e) => setEmail(e.target.value)} />
                         <label>
-                            Password:
-                            <input className="form-control" type="password" name="password" onChange={(e) => setPassword(e.target.value)} />
+                          Password:
                         </label>
-                        <button type='submit'>Submit</button>
+                        <input className="form-control" type="password" name="password" onChange={(e) => setPassword(e.target.value)} />
+                        <button type='submit'>LOGIN</button>
                     </fieldset>
                 </div>
             </form>
