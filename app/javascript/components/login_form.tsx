@@ -5,9 +5,9 @@ function LoginForm (props: {path: String}) {
   const path = props.path;
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [errorsList, setErrors] = React.useState([]);
+  const [errors, setErrors] = React.useState("");
 
-  const SendForm = (e) => {
+  const SendForm = (e: any) => {
     e.preventDefault();
     console.log(path);
     $.ajax({
@@ -21,7 +21,6 @@ function LoginForm (props: {path: String}) {
 
       success: function (result) {
         setErrors(result.errors);
-        alert("gOOD JOB!");
       },
       error: function (result) {
         alert("Please try again");
@@ -29,16 +28,11 @@ function LoginForm (props: {path: String}) {
     });
   };
 
-  const listErrors =
-        errorsList.map((error, key) =>
-                <li key = {key}>{error}</li>
-        );
-
   return (
         <div>
             <form className ='loginform' onSubmit={SendForm}>
               <h1>LOGIN</h1> <br></br>
-            {errorsList ? <ul>{listErrors}</ul> : null}
+            {errors ? <h3>{errors}</h3> : null}
             <div style ={{ width: 50, height: 50 }}>
                     <fieldset>
                         <label>
