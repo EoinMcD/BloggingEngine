@@ -12,9 +12,9 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
-  private 
+  private
 
   def user_exists
-    redirect_to("/loginUser") unless current_user
+    redirect_to('/loginUser') unless current_user
   end
 end
