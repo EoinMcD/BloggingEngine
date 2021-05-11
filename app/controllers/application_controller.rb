@@ -15,6 +15,6 @@ class ApplicationController < ActionController::Base
   private
 
   def user_exists
-    redirect_to('/loginUser') unless current_user
+    redirect_to('log_path') unless current_user
   end
 end

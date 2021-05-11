@@ -7,7 +7,7 @@ class LoginController < ApplicationController
 
     if @user && @user.authenticate(session_params[:password])
       login
-      redirect_to '/articles'
+      redirect_to 'articles_path'
     else
       render json: {
         status: 401,

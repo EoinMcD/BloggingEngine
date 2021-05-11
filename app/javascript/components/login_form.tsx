@@ -1,6 +1,6 @@
 import * as React from "react";
 import $ from "jquery";
-
+interface {}
 function LoginForm (props: {path: String}) {
   const path = props.path;
   const [email, setEmail] = React.useState("");
@@ -9,7 +9,6 @@ function LoginForm (props: {path: String}) {
 
   const SendForm = (e: any) => {
     e.preventDefault();
-    console.log(path);
     $.ajax({
       async: false,
       type: "POST",
@@ -30,7 +29,7 @@ function LoginForm (props: {path: String}) {
 
   return (
         <div>
-            <form className ='loginform' onSubmit={SendForm}>
+            <form className ='login-form' onSubmit={SendForm}>
               <h1>LOGIN</h1> <br></br>
             {errors ? <h3>{errors}</h3> : null}
             <div style ={{ width: 50, height: 50 }}>
