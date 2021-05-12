@@ -14,7 +14,7 @@ RSpec.describe LoginController, type: :controller do
       let(:login) { { email: 'foo@bar.com', password: '123456' } }
       it 'Logs user in' do
         post :create, params: login
-        expect(controller.logged_in?).to eq(true)
+        expect(controller.current_user.present?).to eq(true)
       end
       it 'Redirects on Login' do
         post :create, params: login
@@ -25,7 +25,7 @@ RSpec.describe LoginController, type: :controller do
       let(:login) { { email: 'foo@bar.com', password: 'wrongPassword' } }
       it 'Logs user in' do
         post :create, params: login
-        expect(controller.logged_in?).to eq(false)
+        expect(controller.current_user.present?).to eq(false)
       end
       it 'Does not redirect on unsuccessful Login' do
         post :create, params: login

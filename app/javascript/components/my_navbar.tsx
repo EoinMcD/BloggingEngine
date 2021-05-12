@@ -24,7 +24,12 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function MyNavbar (props: { loggedIn: boolean; regPath: string; homePath: string; loginPath: string; }) {
+function MyNavbar (props: {
+  loggedIn: boolean;
+  regPath: string;
+  homePath: string;
+  loginPath: string;
+}) {
   const classes = useStyles();
   const loggedIn = props.loggedIn;
   const regPath = props.regPath;
@@ -47,10 +52,12 @@ function MyNavbar (props: { loggedIn: boolean; regPath: string; homePath: string
             )}
         {loggedIn
           ? (
-          <Button color="inherit" >Logout</Button>
+          <Button color="inherit">Logout</Button>
             )
           : (
-          <Button data-testid="login-button" color="inherit" href={loginPath}>Login</Button>
+          <Button data-testid="login-button" color="inherit" href={loginPath}>
+            Login
+          </Button>
             )}
       </Toolbar>
     </AppBar>

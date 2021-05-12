@@ -3,8 +3,8 @@ class LoginController < ApplicationController
   def index
     @form_token = form_authenticity_token
   end
+
   def create
-    
     @user = User.find_by(email: session_params[:email])
 
     if @user && @user.authenticate(session_params[:password])
