@@ -2,8 +2,9 @@ import * as React from "react";
 import $ from "jquery";
 interface LoginFormProps {
   path: String;
+  token: String;
 }
-const LoginForm: React.FC<LoginFormProps> = ({ path }) => {
+const LoginForm: React.FC<LoginFormProps> = ({ path, token }) => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [errors, setErrors] = React.useState("");
@@ -14,6 +15,9 @@ const LoginForm: React.FC<LoginFormProps> = ({ path }) => {
       async: false,
       type: "POST",
       url: path,
+      headers: {
+        "X-CSRF-Token": token
+      },
       data: {
         email: email,
         password: password
