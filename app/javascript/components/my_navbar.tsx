@@ -50,7 +50,7 @@ function MyNavbar (props: { loggedIn: boolean; regPath: string; homePath: string
           <Button color="inherit" >Logout</Button>
             )
           : (
-          <Button color="inherit" href={loginPath}>Login</Button>
+          <Button data-testid="login-button" color="inherit" href={loginPath}>Login</Button>
             )}
       </Toolbar>
     </AppBar>
