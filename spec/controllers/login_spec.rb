@@ -9,9 +9,12 @@ RSpec.describe LoginController, type: :controller do
       end
     end
   end
+  before(:all) do
+    @user = create(:user)
+  end
   describe 'POST login#create' do
     context 'When user submits correct params' do
-      let(:login) { { email: 'foo@bar.com', password: '123456' } }
+      let(:login) { { email: @user.email, password: @user.password } }
       it 'Logs user in' do
         post :create, params: login
         expect(controller.current_user.present?).to eq(true)
@@ -22,7 +25,7 @@ RSpec.describe LoginController, type: :controller do
       end
     end
     context 'When user submits incorrect params' do
-      let(:login) { { email: 'foo@bar.com', password: 'wrongPassword' } }
+      let(:login) { { email: @user.email, password: 'wrongPassword' } }
       it 'Logs user in' do
         post :create, params: login
         expect(controller.current_user.present?).to eq(false)
