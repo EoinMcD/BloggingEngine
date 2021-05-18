@@ -6,8 +6,7 @@ class LoginController < ApplicationController
 
   def create
     @user = User.find_by(email: session_params[:email])
-
-    if @user && @user.authenticate(session_params[:password])
+    if @user&.authenticate(session_params[:password])
       login
       redirect_to articles_path
     else
