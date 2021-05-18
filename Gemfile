@@ -5,7 +5,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
-source 'https://rubygems.org'
 gem 'rspec', '~> 3.0'
 # Bcypt for password hashing
 gem 'bcrypt', '3.1.11'
