@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "15px",
     padding: "0",
     height: "70px"
+  },
+  button: {
+    color: "white"
   }
 }));
 
@@ -39,23 +42,23 @@ function MyNavbar (props: {
     <AppBar position="static" className={classes.toolbar}>
       <Toolbar>
         <Typography variant="h1" className={classes.title}>
-          <Button data-testid="home-button" href={homePath} color="inherit">
+          <Button data-testid="home-button" href={homePath} className={classes.button} >
             BlogEngine
           </Button>
         </Typography>
         {loggedIn
           ? null
           : (
-          <Button data-testid="reg-button" href={regPath} color="inherit">
+          <Button data-testid="reg-button" href={regPath} className={classes.button} >
             Register
           </Button>
             )}
         {loggedIn
           ? (
-          <Button color="inherit">Logout</Button>
+          <Button className={classes.button} >Logout</Button>
             )
           : (
-          <Button data-testid="login-button" color="inherit" href={loginPath}>
+          <Button className={classes.button} data-testid="login-button" href={loginPath}>
             Login
           </Button>
             )}
