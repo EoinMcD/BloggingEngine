@@ -1,8 +1,8 @@
 import * as React from "react";
 import $ from "jquery";
 interface LoginFormProps {
-  path: String;
-  token: String;
+  path: string;
+  token: string;
 }
 const LoginForm: React.FC<LoginFormProps> = ({ path, token }) => {
   const [email, setEmail] = React.useState("");
@@ -36,7 +36,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ path, token }) => {
     <div>
       <form className="login-form" onSubmit={SendForm}>
         <h1>LOGIN</h1> <br></br>
-        {errors ? <h3>{errors}</h3> : null}
+        {errors ? <h3 data-testid="Error">{errors}</h3> : null}
         <div style={{ width: 50, height: 50 }}>
           <fieldset>
             <label>Email:</label>
@@ -52,7 +52,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ path, token }) => {
               name="password"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button type="submit">LOGIN</button>
+            <button type="submit" data-testid="loginButton">LOGIN</button>
           </fieldset>
         </div>
       </form>
