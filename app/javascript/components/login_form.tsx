@@ -1,5 +1,5 @@
 import * as React from "react";
-import $ from "jquery";
+import axios from "axios";
 interface LoginFormProps {
   path: string;
   token: string;
@@ -11,9 +11,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ path, token }) => {
 
   const SendForm = (e: any) => {
     e.preventDefault();
-    $.ajax({
-      async: false,
-      type: "POST",
+    axios({
+      method: "post",
       url: path,
       headers: {
         "X-CSRF-Token": token
@@ -21,15 +20,13 @@ const LoginForm: React.FC<LoginFormProps> = ({ path, token }) => {
       data: {
         email: email,
         password: password
-      },
-
-      success: function (result) {
-        setErrors(result.errors);
-      },
-      error: function (result) {
-        alert("Please try again");
       }
-    });
+    })
+      .then((response) => {
+        setErrors(response.data.errors);
+      }, (_error) => {
+        window.alert("Nope");
+      });
   };
 
   return (
