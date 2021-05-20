@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component renders as expected 1`] = `
+exports[`Describe the login form Component renders as expected 1`] = `
 <div>
   <div>
     <form
@@ -31,7 +31,6 @@ exports[`Component renders as expected 1`] = `
             type="password"
           />
           <button
-            data-testid="loginButton"
             type="submit"
           >
             LOGIN

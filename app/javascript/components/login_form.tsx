@@ -23,8 +23,12 @@ const LoginForm: React.FC<LoginFormProps> = ({ path, token }) => {
       }
     })
       .then((response) => {
+        if (response.status === 200 && response.data.errors === undefined) {
+          window.location.href = "/articles";
+        }
         setErrors(response.data.errors);
-      }, (_error) => {
+      })
+      .catch(() => {
         window.alert("Nope");
       });
   };
@@ -49,7 +53,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ path, token }) => {
               name="password"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button type="submit" data-testid="loginButton">LOGIN</button>
+            <button type="submit">LOGIN</button>
           </fieldset>
         </div>
       </form>
