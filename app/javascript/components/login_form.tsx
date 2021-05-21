@@ -39,7 +39,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ path, token, redirectPath }) => {
       <form className="login-form" onSubmit={SendForm}>
         <h1>LOGIN</h1> <br></br>
         {errors ? <h3 data-testid="Error">{errors}</h3> : null}
-        <div style={{ width: 50, height: 50 }}>
+        <div>
           <fieldset>
             <label>Email:</label>
             <input

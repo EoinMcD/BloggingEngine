@@ -1,19 +1,29 @@
 .login-form {
-  width: 365px;
-  height: 400px;
+  width: 400px;
+  height: 500px;
   background-color: sandybrown;
   text-align: center;
   margin: 105px ;
   box-shadow: 2px 5px #3d3c32e0;
   padding: 50px;
   border-radius: 50px;
+  overflow: hidden; 
   label {
     text-align: center;
     font-size: 30px;
   }
+  label::after{ 
+    content: "\a";
+    white-space: pre;
+  }
+  label::before{ 
+    content: "\a";
+    white-space: pre;
+  }
   input {
     font-size: 30px;
     width:310px;
+    justify-self: auto;
   }
   button {
     font-size: 20px;
