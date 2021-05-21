@@ -3,26 +3,26 @@
   height: 500px;
   background-color: sandybrown;
   text-align: center;
-  margin: 105px ;
+  margin: 105px;
   box-shadow: 2px 5px #3d3c32e0;
   padding: 50px;
   border-radius: 50px;
-  overflow: hidden; 
+  overflow: hidden;
   label {
     text-align: center;
     font-size: 30px;
   }
-  label::after{ 
+  label::after {
     content: "\a";
     white-space: pre;
   }
-  label::before{ 
+  label::before {
     content: "\a";
     white-space: pre;
   }
   input {
     font-size: 30px;
-    width:310px;
+    width: 310px;
     justify-self: auto;
   }
   button {
@@ -34,7 +34,6 @@
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
       "Lucida Sans", Arial, sans-serif;
     font-size: 50px;
-
   }
   h3 {
     color: #e6e2d3;
