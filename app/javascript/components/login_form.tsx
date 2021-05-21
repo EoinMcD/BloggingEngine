@@ -3,8 +3,9 @@ import axios from "axios";
 interface LoginFormProps {
   path: string;
   token: string;
+  redirectPath: string;
 }
-const LoginForm: React.FC<LoginFormProps> = ({ path, token }) => {
+const LoginForm: React.FC<LoginFormProps> = ({ path, token, redirectPath }) => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [errors, setErrors] = React.useState("");
@@ -24,7 +25,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ path, token }) => {
     })
       .then((response) => {
         if (response.status === 200 && response.data.errors === undefined) {
-          window.location.href = "/articles";
+          window.location.href = redirectPath;
         }
         setErrors(response.data.errors);
       })
