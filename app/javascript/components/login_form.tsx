@@ -25,30 +25,33 @@ const LoginForm: React.FC<LoginFormProps> = ({ path, token, redirectPath }) => {
     })
       .then((response) => {
         if (response.status === 200 && response.data.errors === undefined) {
+          console.log("HELLOOOOO");
           window.location.href = redirectPath;
         }
         setErrors(response.data.errors);
       })
       .catch(() => {
-        window.alert("Nope");
+        window.alert("Please Try Again");
       });
   };
 
   return (
     <div>
       <form className="login-form" onSubmit={SendForm}>
-        <h1>LOGIN</h1> <br></br>
-        {errors ? <h3 data-testid="Error">{errors}</h3> : null}
+        <h1>LOGIN</h1>
+        {errors ? <h3 data-testid="error-div">{errors}</h3> : null}
         <div>
           <fieldset>
             <label>Email:</label>
             <input
+              data-testid="email"
               className="form-control"
               name="email"
               onChange={(e) => setEmail(e.target.value)}
             />
             <label>Password:</label>
             <input
+              data-testid="password"
               className="form-control"
               type="password"
               name="password"

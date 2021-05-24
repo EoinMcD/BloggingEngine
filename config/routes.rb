@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/signup', to:'users#user'
   post '/create', to:'users#create'
   get '/articles', to:'main#index'
-  post '/log', to:'login#create'
+  post '/loginUser', to:'login#create'
   get '/about', to:'about#index'
-  get '/loginUser', to:'login#index'
+  get '/login', to:'login#index'
 end

@@ -20,6 +20,10 @@
     content: "\a";
     white-space: pre;
   }
+  h1::after {
+    content: "\a";
+    white-space: pre;
+  }
   input {
     font-size: 30px;
     width: 310px;

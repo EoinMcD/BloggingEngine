@@ -12,7 +12,7 @@ class LoginController < ApplicationController
     else
       render json: {
         status: 401,
-        errors: 'No User Found'
+        errors: 'Email or password is incorrect'
       }
     end
   end
