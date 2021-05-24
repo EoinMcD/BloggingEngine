@@ -25,7 +25,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ path, token, redirectPath }) => {
     })
       .then((response) => {
         if (response.status === 200 && response.data.errors === undefined) {
-          console.log("HELLOOOOO");
           window.location.href = redirectPath;
         }
         setErrors(response.data.errors);
@@ -44,14 +43,12 @@ const LoginForm: React.FC<LoginFormProps> = ({ path, token, redirectPath }) => {
           <fieldset>
             <label>Email:</label>
             <input
-              data-testid="email"
               className="form-control"
               name="email"
               onChange={(e) => setEmail(e.target.value)}
             />
             <label>Password:</label>
             <input
-              data-testid="password"
               className="form-control"
               type="password"
               name="password"

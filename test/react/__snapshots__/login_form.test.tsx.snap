@@ -16,7 +16,6 @@ exports[`Describe the login form Component renders as expected 1`] = `
           </label>
           <input
             class="form-control"
-            data-testid="email"
             name="email"
           />
           <label>
@@ -24,7 +23,6 @@ exports[`Describe the login form Component renders as expected 1`] = `
           </label>
           <input
             class="form-control"
-            data-testid="password"
             name="password"
             type="password"
           />
