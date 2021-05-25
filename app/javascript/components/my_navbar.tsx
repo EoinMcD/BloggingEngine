@@ -27,17 +27,19 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function MyNavbar (props: {
+interface NavbarProps {
   loggedIn: boolean;
   regPath: string;
   homePath: string;
-  loginPath: string;
-}) {
+  loginPath: string
+}
+const MyNavbar: React.FC<NavbarProps> = ({
+  loggedIn,
+  regPath,
+  homePath,
+  loginPath
+}) => {
   const classes = useStyles();
-  const loggedIn = props.loggedIn;
-  const regPath = props.regPath;
-  const homePath = props.homePath;
-  const loginPath = props.loginPath;
   return (
     <AppBar position="static" className={classes.toolbar}>
       <Toolbar>
@@ -65,6 +67,6 @@ function MyNavbar (props: {
       </Toolbar>
     </AppBar>
   );
-}
+};
 
 export default MyNavbar;

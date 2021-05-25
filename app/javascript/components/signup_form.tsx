@@ -1,13 +1,15 @@
-import React from "react";
+import * as React from "react";
 import $ from "jquery";
 
-function SignupForm () {
-  const [name, setName] = React.useState("");
-  const [sname, setSname] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [confirmpassword, setConfirm] = React.useState("");
-  const [errorsList, setErrors] = React.useState([]);
+const SignupForm: React.FC = (
+  ) => {
+    const [name, setName] = React.useState("");
+    const [sname, setSname] = React.useState("");
+    const [email, setEmail] = React.useState("");
+    const [password, setPassword] = React.useState("");
+    const [confirmpassword, setConfirm] = React.useState("");
+    const [errorsList, setErrors] = React.useState([]);
+  
 
   const SendForm = (e) => {
     e.preventDefault();
