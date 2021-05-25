@@ -1,4 +1,4 @@
-<h1>USER SIGNUP PAGE</h1>
-
-<%= react_component("signup_form") %>
+<div class='signup-main'>
+    <%= react_component("signup_form", {path: users_path, token: @form_token, redirectPath:articles_path}) %>  
+</div>
  

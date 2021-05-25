@@ -1,0 +1,46 @@
+.signup-main {
+    display: flex;
+  justify-content: center;
+}
+.signup-form {
+  background-color: sandybrown;
+  width: 400px;
+  height: fit-content;
+  text-align: center;
+  box-shadow: 2px 5px #3d3c32e0;
+  padding: 50px;
+  border-radius: 50px;
+  justify-content: center;
+  margin-top: 80px;
+  label {
+    font-size:30px;
+  }
+  label::after {
+    content: "\a";
+    white-space: pre;
+  }
+  label::before {
+    content: "\a";
+    white-space: pre;
+  }
+  input::after {
+    content: "\a";
+    white-space: pre;
+  }
+  input {
+    font-size: 20px;
+    width: 310px;
+    justify-self: auto;
+  }
+  button {
+    font-size: 20px;
+    width: 100px;
+    height: 30px;
+  }
+  ul {
+    color:red;
+    list-style-type: none;
+    align-self: center;
+    width:320px;
+  }
+}
