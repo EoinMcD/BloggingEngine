@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :user_exists
   def user
     @user = User.new
   end

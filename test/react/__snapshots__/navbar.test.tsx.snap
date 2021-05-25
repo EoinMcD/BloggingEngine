@@ -13,7 +13,7 @@ exports[`Component renders as expected 1`] = `
       >
         <a
           aria-disabled="false"
-          class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
+          class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-button-5"
           data-testid="home-button"
           href="/"
           tabindex="0"
@@ -29,7 +29,7 @@ exports[`Component renders as expected 1`] = `
         </a>
       </h1>
       <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
+        class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-button-5"
         tabindex="0"
         type="button"
       >

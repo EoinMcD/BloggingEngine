@@ -23,7 +23,8 @@
         "semi": ["error", "always"],
         "quotes": ["error", "double"],
         "no-use-before-define": "off",
-        "@typescript-eslint/no-use-before-define": ["error"]
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "react/prop-types": "off"
        
     },
     "settings": {

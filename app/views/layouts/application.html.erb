@@ -12,7 +12,7 @@
   </head>
 
   <body>
-  <%= react_component("my_navbar", {loggedIn: controller.current_user.present?, regPath: signup_path, homePath: root_path}) %>
+  <%= react_component("my_navbar", {loggedIn: controller.current_user.present?, regPath: signup_path, homePath: root_path, loginPath: login_index_path}) %>
     <%= yield %>
   </body>
 </html>

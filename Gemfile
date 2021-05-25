@@ -5,7 +5,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
-source 'https://rubygems.org'
 gem 'rspec', '~> 3.0'
 # Bcypt for password hashing
 gem 'bcrypt', '3.1.11'
@@ -39,6 +38,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry'
+  gem 'pry-nav'
 end
 
 group :development do
@@ -50,6 +51,10 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :development, :test do
+  gem 'factory_bot_rails'
 end
 
 group :test do

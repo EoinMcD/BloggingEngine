@@ -8,10 +8,11 @@ import "@testing-library/jest-dom";
 const renderNavbar = (
   loggedIn = true,
   regPath = "/signup",
-  homePath = "/"
+  homePath = "/",
+  loginPath = "/loginUser"
 ) : RenderResult => {
   return render(
-    <MyNavbar loggedIn= {loggedIn} regPath={regPath} homePath={homePath} />
+    <MyNavbar loggedIn= {loggedIn} regPath={regPath} homePath={homePath} loginPath={loginPath}/>
   );
 };
 
@@ -48,4 +49,9 @@ test("Register button is visible when user is logged out", () => {
 test("Login button is visible when user is logged out", () => {
   const { container } = renderNavbar(false);
   expect(getByText(container, "Login")).toBeTruthy();
+});
+
+test("Login button has the right link", () => {
+  const { container } = renderNavbar(false);
+  expect(getByTestId(container, "login-button")).toHaveProperty("href", window.location.href + "loginUser");
 });

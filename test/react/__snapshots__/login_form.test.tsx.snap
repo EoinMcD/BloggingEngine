@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Describe the login form Component renders as expected 1`] = `
+<div>
+  <div>
+    <form
+      class="login-form"
+    >
+      <h1>
+        LOGIN
+      </h1>
+      <div>
+        <fieldset>
+          <label>
+            Email:
+          </label>
+          <input
+            class="form-control"
+            name="email"
+          />
+          <label>
+            Password:
+          </label>
+          <input
+            class="form-control"
+            name="password"
+            type="password"
+          />
+          <button
+            type="submit"
+          >
+            LOGIN
+          </button>
+        </fieldset>
+      </div>
+    </form>
+  </div>
+</div>
+`;

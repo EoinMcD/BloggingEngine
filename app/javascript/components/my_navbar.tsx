@@ -21,35 +21,46 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "15px",
     padding: "0",
     height: "70px"
+  },
+  button: {
+    color: "white"
   }
 }));
 
-function MyNavbar (props: { loggedIn: boolean; regPath: string; homePath: string; }) {
+function MyNavbar (props: {
+  loggedIn: boolean;
+  regPath: string;
+  homePath: string;
+  loginPath: string;
+}) {
   const classes = useStyles();
   const loggedIn = props.loggedIn;
   const regPath = props.regPath;
   const homePath = props.homePath;
+  const loginPath = props.loginPath;
   return (
     <AppBar position="static" className={classes.toolbar}>
       <Toolbar>
         <Typography variant="h1" className={classes.title}>
-          <Button data-testid="home-button" href={homePath} color="inherit">
+          <Button data-testid="home-button" href={homePath} className={classes.button} >
             BlogEngine
           </Button>
         </Typography>
         {loggedIn
           ? null
           : (
-          <Button data-testid="reg-button" href={regPath} color="inherit">
+          <Button data-testid="reg-button" href={regPath} className={classes.button} >
             Register
           </Button>
             )}
         {loggedIn
           ? (
-          <Button color="inherit" >Logout</Button>
+          <Button className={classes.button} >Logout</Button>
             )
           : (
-          <Button color="inherit">Login</Button>
+          <Button className={classes.button} data-testid="login-button" href={loginPath}>
+            Login
+          </Button>
             )}
       </Toolbar>
     </AppBar>
