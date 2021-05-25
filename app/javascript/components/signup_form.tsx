@@ -2,14 +2,13 @@ import * as React from "react";
 import $ from "jquery";
 
 const SignupForm: React.FC = (
-  ) => {
-    const [name, setName] = React.useState("");
-    const [sname, setSname] = React.useState("");
-    const [email, setEmail] = React.useState("");
-    const [password, setPassword] = React.useState("");
-    const [confirmpassword, setConfirm] = React.useState("");
-    const [errorsList, setErrors] = React.useState([]);
-  
+) => {
+  const [name, setName] = React.useState("");
+  const [sname, setSname] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [confirmpassword, setConfirm] = React.useState("");
+  const [errorsList, setErrors] = React.useState([]);
 
   const SendForm = (e) => {
     e.preventDefault();
@@ -70,6 +69,6 @@ const SignupForm: React.FC = (
             </form>
         </div>
   );
-}
+};
 
 export default SignupForm;
