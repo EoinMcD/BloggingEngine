@@ -1,2 +1,8 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class = 'home-page'>
+    <img src='https://media.macphun.com/img/uploads/customer/blog/1563197047/15632023525d2c9330b67118.07554864.jpg?q=85&w=2520'>
+    <h1>BloggingEngine</h1>
+    <div class ='buttons'>
+        <%= react_component("button",{path:signup_path,name:"Register"}) %>
+        <%= react_component("button",{path:login_index_path,name:"Login"}) %>
+    </div>
+</div>
