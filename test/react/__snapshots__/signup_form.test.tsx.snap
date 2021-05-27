@@ -4,12 +4,15 @@ exports[`Describe the signup form Component renders as expected 1`] = `
 <div>
   <div>
     <form
-      class="signup-form"
+      class="form"
     >
       <h1>
         SIGN-UP
       </h1>
+       
+      <br />
       <ul
+        class="signup-ul"
         data-testid="error-div"
       />
       <div>

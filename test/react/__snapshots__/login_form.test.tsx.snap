@@ -4,9 +4,11 @@ exports[`Describe the login form Component renders as expected 1`] = `
 <div>
   <div>
     <form
-      class="login-form"
+      class="form"
     >
-      <h1>
+      <h1
+        class="login-h1"
+      >
         LOGIN
       </h1>
       <div>
