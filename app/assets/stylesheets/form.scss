@@ -1,0 +1,56 @@
+.form-main {
+  display: flex;
+  justify-content: center;
+}
+.form {
+  width: 400px;
+  flex-direction: column;
+  height: fit-content;
+  background: sandybrown;
+  text-align: center;
+  box-shadow: 2px 5px #3d3c32e0;
+  padding: 50px;
+  border-radius: 50px;
+  justify-content: center;
+  margin-top: 80px;
+  label {
+    text-align: center;
+    font-size: 30px;
+  }
+  label::after {
+    content: "\a";
+    white-space: pre;
+  }
+  label::before {
+    content: "\a";
+    white-space: pre;
+  }
+  button {
+    font-size: 20px;
+    width: 100px;
+    height: 30px;
+  }
+  input {
+    font-size: 20px;
+    width: 310px;
+    justify-self: auto;
+  }
+}
+.signup-ul {
+  color: red;
+  list-style-type: none;
+  align-self: center;
+  width: 320px;
+  margin-right: 30px;
+}
+
+.login-h1 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 50px;
+}
+.login-h3 {
+  color: #e6e2d3;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}

@@ -33,30 +33,27 @@ const SignupForm: React.FC<SignupProps> = ({ path, token, redirectPath }
       }
     })
       .then((response) => {
-        console.log("IM HERE" + response.status);
-        console.log(response.data.errors);
         if (response.status === 200 && response.data.errors === undefined) {
           window.location.href = redirectPath;
-          return;
         }
         setErrors(response.data.errors);
       })
-      .catch((e) => {
-        console.log(e);
+      .catch(() => {
         window.alert("Please try again");
       });
   };
 
   const listErrors =
-        errorsList.map((error, key) =>
-                <li key = {key}>{error}</li>
-        );
+  errorsList
+    ? (errorsList.map((error, key) =>
+                <li key = {key}>{error}</li>))
+    : null;
 
   return (
         <div>
-            <form className="signup-form" onSubmit={SendForm}>
-            <h1>SIGN-UP</h1>
-                {errorsList ? <ul data-testid="error-div">{listErrors}</ul> : null}
+            <form className="form" onSubmit={SendForm}>
+            <h1>SIGN-UP</h1> <br></br>
+                {errorsList ? <ul className="signup-ul" data-testid="error-div">{listErrors}</ul> : null}
                 <div>
                     <fieldset>
                         <label>
