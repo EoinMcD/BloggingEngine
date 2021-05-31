@@ -2,8 +2,9 @@ class UsersController < ApplicationController
   skip_before_action :user_exists
   def user
     @user = User.new
+    @form_token = form_authenticity_token
   end
-  skip_before_action :verify_authenticity_token
+  wrap_parameters false
   def create
     @user = User.new(user_params)
 

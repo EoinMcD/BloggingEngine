@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Describe the signup form Component renders as expected 1`] = `
+<div>
+  <div>
+    <form
+      class="form"
+    >
+      <h1>
+        SIGN-UP
+      </h1>
+       
+      <br />
+      <ul
+        class="signup-ul"
+        data-testid="error-div"
+      />
+      <div>
+        <fieldset>
+          <label>
+            First Name:
+          </label>
+          <input
+            class="form-control"
+            name="name"
+          />
+          <label>
+            Second Name:
+          </label>
+          <input
+            class="form-control"
+            name="sname"
+          />
+          <label>
+            Email:
+          </label>
+          <input
+            class="form-control"
+            name="email"
+          />
+          <label>
+            Password:
+          </label>
+          <input
+            class="form-control"
+            name="password"
+            type="password"
+          />
+          <label>
+            Confirm Password:
+          </label>
+          <input
+            class="form-control"
+            name="confirmpassword"
+            type="password"
+          />
+          <button
+            type="submit"
+          >
+            Submit
+          </button>
+        </fieldset>
+      </div>
+    </form>
+  </div>
+</div>
+`;

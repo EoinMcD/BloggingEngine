@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component renders as expected 1`] = `
+<div>
+  <a
+    aria-disabled="false"
+    class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-button-1"
+    href="/signup"
+    tabindex="0"
+  >
+    <span
+      class="MuiButton-label"
+    >
+      Register
+    </span>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </a>
+</div>
+`;
