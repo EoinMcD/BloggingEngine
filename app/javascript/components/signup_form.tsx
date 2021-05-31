@@ -49,9 +49,9 @@ const SignupForm: React.FC<SignupProps> = ({ path, token, redirectPath }) => {
         {errorsList
           ? (
           <ul className="signup-ul" data-testid="error-div">
-            {errorsList
-              ? errorsList.map((error, key) => <li key={key}>{error}</li>)
-              : null}
+            {errorsList.map((error, key) => (
+              <li key={key}>{error}</li>
+            ))}
           </ul>
             )
           : null}
