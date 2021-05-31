@@ -10,17 +10,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 interface ButtonProps {
-    name: string;
+    buttonText: string;
     path: string;
 }
 const MyButton: React.FC<ButtonProps> = ({
-  name,
+  buttonText,
   path
 }) => {
   const classes = useStyles();
   return (
-      <Button variant ="contained" className={classes.button} href={path}>
-          {name}
+      <Button variant="contained" className={classes.button} href={path}>
+          {buttonText}
       </Button>
   );
 };

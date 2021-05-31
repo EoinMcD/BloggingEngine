@@ -19,7 +19,7 @@ const renderForm = (
   redirectPath = "/articles"
 ): RenderResult => {
   return render(
-      <SignupForm path={path} token={token} redirectPath={redirectPath}/>
+    <SignupForm path={path} token={token} redirectPath={redirectPath} />
   );
 };
 
@@ -63,26 +63,33 @@ describe("Describe the signup form", () => {
     });
     test("Password confirmation input is shown in the form", () => {
       const { container } = renderForm();
-      expect(container.querySelector("input[name=confirmpassword]")).toBeTruthy();
+      expect(
+        container.querySelector("input[name=confirmpassword]")
+      ).toBeTruthy();
     });
   });
-  describe("Unsuccesful logins or params", () => {
-    test("An error is shown after user hasnt correctly inputted info when submitting signup request", () => {
+  describe("Unsuccesful signup or params", () => {
+    test("An error is shown when user submits incorrect data", () => {
       const { container } = renderForm();
       const response = {
         data: {
-          errors: ["First name can't be blank",
+          errors: [
+            "First name can't be blank",
             "Second name can't be blank",
             "Email can't be blank",
             "Email is invalid",
             "Password can't be blank",
             "Password is too short (minimum is 6 characters)",
-            "Password can't be blank"]
+            "Password can't be blank"
+          ]
         }
       };
       fireEvent.click(getByRole(container, "button"));
       mockAxios.mockResponse(response);
       expect(queryByTestId(container, "error-div")).toBeTruthy();
+      expect(queryByTestId(container, "error-div").textContent).toBe(
+        "First name can't be blankSecond name can't be blankEmail can't be blankEmail is invalidPassword can't be blankPassword is too short (minimum is 6 characters)Password can't be blank"
+      );
     });
     test("Alert message displays when there is no response when submitting signup request", () => {
       const { container } = renderForm("/wrongLogPath");

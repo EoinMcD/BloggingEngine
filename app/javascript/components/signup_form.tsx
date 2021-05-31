@@ -7,8 +7,7 @@ interface SignupProps {
   redirectPath: string;
 }
 
-const SignupForm: React.FC<SignupProps> = ({ path, token, redirectPath }
-) => {
+const SignupForm: React.FC<SignupProps> = ({ path, token, redirectPath }) => {
   const [name, setName] = React.useState("");
   const [sname, setSname] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -43,44 +42,58 @@ const SignupForm: React.FC<SignupProps> = ({ path, token, redirectPath }
       });
   };
 
-  const listErrors =
-  errorsList
-    ? (errorsList.map((error, key) =>
-                <li key = {key}>{error}</li>))
-    : null;
-
   return (
+    <div>
+      <form className="form" onSubmit={SendForm}>
+        <h1>SIGN-UP</h1> <br></br>
+        {errorsList
+          ? (
+          <ul className="signup-ul" data-testid="error-div">
+            {errorsList
+              ? errorsList.map((error, key) => <li key={key}>{error}</li>)
+              : null}
+          </ul>
+            )
+          : null}
         <div>
-            <form className="form" onSubmit={SendForm}>
-            <h1>SIGN-UP</h1> <br></br>
-                {errorsList ? <ul className="signup-ul" data-testid="error-div">{listErrors}</ul> : null}
-                <div>
-                    <fieldset>
-                        <label>
-                           First Name:
-                        </label>
-                        <input className="form-control" name="name" onChange={(e) => setName(e.target.value)} />
-                        <label>
-                            Second Name:
-                        </label>
-                        <input className="form-control" name="sname" onChange={(e) => setSname(e.target.value)}/>
-                        <label>
-                               Email:
-                        </label>
-                        <input className="form-control" name="email" onChange={(e) => setEmail(e.target.value)} />
-                        <label>
-                            Password:
-                        </label>
-                        <input className="form-control" type="password" name="password" onChange={(e) => setPassword(e.target.value)} />
-                        <label>
-                            Confirm Password:
-                        </label>
-                        <input className="form-control" type="password" name="confirmpassword" onChange={(e) => setConfirm(e.target.value)} />
-                        <button type='submit'>Submit</button>
-                    </fieldset>
-                </div>
-            </form>
+          <fieldset>
+            <label>First Name:</label>
+            <input
+              className="form-control"
+              name="name"
+              onChange={(e) => setName(e.target.value)}
+            />
+            <label>Second Name:</label>
+            <input
+              className="form-control"
+              name="sname"
+              onChange={(e) => setSname(e.target.value)}
+            />
+            <label>Email:</label>
+            <input
+              className="form-control"
+              name="email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label>Password:</label>
+            <input
+              className="form-control"
+              type="password"
+              name="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <label>Confirm Password:</label>
+            <input
+              className="form-control"
+              type="password"
+              name="confirmpassword"
+              onChange={(e) => setConfirm(e.target.value)}
+            />
+            <button type="submit">Submit</button>
+          </fieldset>
         </div>
+      </form>
+    </div>
   );
 };
 

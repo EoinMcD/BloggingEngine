@@ -5,8 +5,11 @@ import { render, RenderResult, getByRole } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import "@testing-library/jest-dom";
 
-const renderButton = (path = "/signup", name = "Register"): RenderResult => {
-  return render(<MyButton path={path} name={name} />);
+const renderButton = (
+  path = "/signup",
+  buttonText = "Register"
+): RenderResult => {
+  return render(<MyButton path={path} buttonText={buttonText} />);
 };
 
 test("Component renders as expected", () => {
@@ -14,7 +17,7 @@ test("Component renders as expected", () => {
   expect(container).toMatchSnapshot();
 });
 
-test("Register button has the right link", () => {
+test("Button has the right link", () => {
   const { container } = renderButton();
   expect(getByRole(container, "link")).toHaveProperty(
     "href",
@@ -22,10 +25,7 @@ test("Register button has the right link", () => {
   );
 });
 
-test("Login button has the right link", () => {
-  const { container } = renderButton("/login/index");
-  expect(getByRole(container, "link")).toHaveProperty(
-    "href",
-    window.location.href + "login/index"
-  );
+test("Button has the right text", () => {
+  const { container } = renderButton();
+  expect(getByRole(container, "link").textContent).toEqual("Register");
 });
